@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//* most of the code taken from coderius
 
 public class GravWell : MonoBehaviour
 {
@@ -15,8 +16,6 @@ public class GravWell : MonoBehaviour
         celestials = GameObject.FindGameObjectsWithTag("Celestial");
         initVelocity();
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         Gravity();
@@ -41,10 +40,12 @@ public class GravWell : MonoBehaviour
     {
         foreach(GameObject a in celestials)
         {
-            if(!a.GetComponent<properties>().IsStableOrbital){break;}
+            if(!a.GetComponent<properties>().IsStableOrbital){
+                Debug.Log(a.GetComponent<properties>().IsStableOrbital);
+                continue;}
             foreach(GameObject b in celestials)
             {
-                if(!b.GetComponent<properties>().IsStableOrbital){break;}
+                if(!b.GetComponent<properties>().IsStableOrbital){continue;}
                 if(a != b)
                 {
                     float m2 = b.GetComponent<Rigidbody>().mass;
