@@ -7,5 +7,7 @@ using UnityEngine;
 public class properties : MonoBehaviour
 {
     public bool IsStableOrbital = true;
+    public bool CentralOrbit = false;
+    public bool DrawOrbit = false;
 
 }
