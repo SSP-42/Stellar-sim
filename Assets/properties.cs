@@ -9,5 +9,14 @@ public class properties : MonoBehaviour
     public bool IsStableOrbital = true;
     public bool CentralOrbit = false;
     public bool DrawOrbit = false;
-
+    public bool contact = false;
+    void OnCollisionExit(Collision collision)
+    {
+        contact = false;
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        contact = true;
+        Debug.Log(contact);
+    }
 }

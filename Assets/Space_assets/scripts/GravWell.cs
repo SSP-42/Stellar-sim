@@ -7,8 +7,7 @@ public class GravWell : MonoBehaviour
 {
     [SerializeField]
     bool IsElipticalOrbit = false;
-    [SerializeField]
-    private float gravitaionalConstant = 10f;
+    public float gravitaionalConstant = 10f;
     private GameObject[] celestials;
     // Start is called before the first frame update
     void Start()
@@ -55,7 +54,7 @@ public class GravWell : MonoBehaviour
 
                     if (IsElipticalOrbit)
                     {
-                        // Eliptic orbit = G * M  ( 2 / r + 1 / a) where G is the gravitational constant, M is the mass of the central object, r is the distance between the two bodies
+                        // Elliptic orbit = G * M  ( 2 / r + 1 / a) where G is the gravitational constant, M is the mass of the central object, r is the distance between the two bodies
                         // and a is the length of the semi major axis (!!! NOT GAMEOBJECT a !!!)
                         a.GetComponent<Rigidbody>().velocity += a.transform.right * Mathf.Sqrt((gravitaionalConstant * m2) * ((2 / r) - (1 / (r * 1.5f))));
                     }

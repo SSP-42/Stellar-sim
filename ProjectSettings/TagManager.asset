@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Celestial
   - uni-static
+  - target
   layers:
   - Default
   - TransparentFX
